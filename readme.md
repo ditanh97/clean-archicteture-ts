@@ -158,10 +158,42 @@ node-express-typescript/
         /* eslint-disable */
 
 11. Install husky (conventional commit)
-    to force run the links and run the tests on every commit
-    and also we can enforce some comment message 
-    - npx husky-init && npm install
-        
+    Package to add git hooks (enforce policies and ensure consistency among team members)
+    - npx husky-init && npm install (this also add hook to run before every commit)
+    - add a new hooks for commitlint
+      npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+
+12. Install lint-staged (linters againts staged git files)
+    - npm install -D lint-staged
+    - update package.json
+    ```
+    {
+        "lint-staged": {
+            "*.ts": [
+            "npm run lint",
+            "npm run test:staged"
+            ]
+        }
+    }
+    ```
+    - update .husky.pre-commit
+    ```
+    npx lint-staged    
+    ```
+
+13. install commitlint
+    - npm install -D @commitlint/config-conventional @commitlint/cli
+    - create commitlint.config.js
+    ```
+        /* eslint-disable */
+    module.exports = {extends: ['@commitlint/config-conventional']}
+    ```
+    - to execute the commitlint
+      (default nya sudah ada di .husky/commit-msg)
+    ```
+    npx --no -- commitlint --edit ${1}
+    ```
+
 
 
 
