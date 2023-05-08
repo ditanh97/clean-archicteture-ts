@@ -201,6 +201,20 @@ node-express-typescript/
         "project": "./tsconfig.json",
         }
     ```
+    - install eslint extension in viscode
+
+14. install jest-mongodb
+    in-memory implementation
+    basically a preset to run with jest (run mongodb in memory)
+    - npm install i -D @shelf/jest-mongodb
+    - update jest.config.js
+      ```
+      preset: '@shelf/jest-mongodb',
+      ```
+    - init jest-mongodb-config.js
+      sesuaikan versinya dengan mongo yg dipakai 
+    - npm i mongodb
+    - update .gitignore add `globalConfig.json`
 
 
 
