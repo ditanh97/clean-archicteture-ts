@@ -193,7 +193,14 @@ node-express-typescript/
     ```
     npx --no -- commitlint --edit ${1}
     ```
-
+    - tell eslint the typescript project
+        eslint need to know that is the configuration for the typescript in order to check the rules
+    update `.eslintrc.json` (we use tsconfig.json only for development)
+    ```
+        "parserOptions": {
+        "project": "./tsconfig.json",
+        }
+    ```
 
 
 
