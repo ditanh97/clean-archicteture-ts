@@ -216,6 +216,20 @@ node-express-typescript/
     - npm i mongodb
     - update .gitignore add `globalConfig.json`
 
+15. install supertest (run integration test against the express routes)
+    - npm i -D supertest
+    - npm i -D @types/supertest
+    - add sample test `test.spec.ts`
+        ```
+        describe('test', () => {
+            it('should work', () => {
+                expect(true).toBe(true)
+            })
+        })
+
+        ```
+    - npm run test
+    
 
 
 
